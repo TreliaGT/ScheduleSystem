@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Employee extends Model
 {
-    
+
 
     public function schedule()
     {
@@ -15,6 +15,6 @@ class Employee extends Model
 
     public function type_worker()
     {
-        return $this->belongsTo('App\Types_Worker');
+        return $this->belongsTo('App\Types_Worker' , 'employee_id');
     }
 }

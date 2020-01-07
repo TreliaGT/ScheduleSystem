@@ -10,6 +10,6 @@ class Type_Appointment extends Model
 
     public function type_worker()
     {
-        return $this->hasMany('App\Types_Worker', 'types_workers_id');
+        return $this->belongsTo('App\Types_Worker');
     }
 }

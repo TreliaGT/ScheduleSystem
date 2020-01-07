@@ -8,6 +8,7 @@ class Types_Worker extends Model
 {
     protected $table = 'types_workers';
 
+
     public function employee()
     {
         return $this->hasMany('App\Employee', 'employee_id');

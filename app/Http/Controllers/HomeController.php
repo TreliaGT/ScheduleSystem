@@ -27,9 +27,9 @@ class HomeController extends Controller
 
     public function Employee(Request $request){
         $appointment = $request->input('HiddenValue');
-        $types_worker = Types_Worker::where('types_appointment_id', '=', $appointment );
+        $types_worker = Types_Worker::where('types_appointment_id', 'LIKE', $appointment );
 
-      $employees = Employee::findOrFail($types_worker->employee_id);
+      $employees = Employee::where('id', 'LIKE', $types_worker->employee_id);
 
         return view('Employee', compact('employees'));
     }
